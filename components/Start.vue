@@ -31,7 +31,7 @@
 </template>
 
 <script setup lang="ts">
-const isChatting = useState("isChatting", () => false);
+const isChatting = useIsChatting();
 
 const handleSumbit = () => {
   isChatting.value = true

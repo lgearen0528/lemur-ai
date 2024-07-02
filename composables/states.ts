@@ -1,0 +1,1 @@
+export const useIsChatting = () => useState<boolean>('isChatting', () => false);
