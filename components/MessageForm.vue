@@ -18,7 +18,25 @@
 
 <script setup lang="ts">
 const newMessage = ref('');
+const messages = useMessages();
+const { initials } = useCustomer();
 const handleSumbit = () => {
+    messages.value.push({
+        name: initials.value,
+        message: newMessage.value,
+        isAI: false,
+        timestamp: new Date().toLocaleString([], {
+            timeStyle: 'short',
+        }),
+    });
     newMessage.value = '';
+    messages.value.push({
+        name: 'AI bot',
+        message: 'Lorem ipsum 1234567890',
+        isAI: true,
+        timestamp: new Date().toLocaleString([], {
+            timeStyle: 'short',
+        }),
+    });
 }
 </script>
